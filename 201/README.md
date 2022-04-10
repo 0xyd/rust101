@@ -1,4 +1,4 @@
-# Variables, Constants, Data Types, Functions, and Control Flow
+# Variables, Constants and Data Types
 
 ## Variables
 
@@ -89,4 +89,37 @@ char in c is only 1 byte so it can only accept ascii code. However, rust's char 
 
 ### Compound Types
 
+Compound type is a group of values. There are **tuple** and **array**.
 
+Syntax of declaring a tuple:
+
+```rust
+	let name_of_tuple: (v1 type, v2 type, ... ) = (v1, v2, ...);
+	let name_of_tuple = (v1, v2, ...);
+```
+
+Note that the empty tuple is acceptable too:
+```rust
+	let empty_tuple = ();
+```
+
+Tuple accepts different types of variables to group together. In contrast, all the elements in an array must have the same type.
+
+Syntax of declaring an array:
+
+```rust
+	let name_of_array = [d1, d2, d3, ...];
+	let name_of_array2: [type_of_array; number_of_elements] = [elem1, elem2, elem3, ... ];
+	let name_of_array3: [initial_value; number_of_elements] = [initial_value, initial_value, initial_value, ...]; // Initialize an array by a specific value.
+```
+
+Array cannot be empty but can be declare without initialization. In C, a non-initialized is accessible; however, this kind of array is not permitted to access.
+
+Tuple and array also have different syntax to access single element. In tuple, we use "dot"; in an array, we use brackets:
+
+```rust
+	let tup = (1, 2, 3);
+	let array = [1, ,2, 3];
+	println!("{},{},{}", tup.0, tup.1, tup.2);
+	println!("{},{},{}", array[0], array[1], array[2]);
+```
