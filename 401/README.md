@@ -144,7 +144,7 @@ fn rmanipulates_string(mut s: String) -> String {
 
 Reference is a pointer that points to a specific data type. 
 
-With reference, ownership of a variable is borrowed by a function instead of being taken. We pass the reference of string *s0* to a function that calculates its length in the below example. We find out *s0* is still workable after the function is called.
+With reference, ownership of a variable is **borrowed** by a function instead of being taken. We pass the reference of string *s0* to a function that calculates its length in the below example. We find out *s0* is still workable after the function is called.
 
 ```rust
 {
@@ -231,6 +231,11 @@ The restrictions only applies when the references are in the same scope. So we c
     println!("After r5 called in scope, s2 :{:?}", s2);
 }
 ```
+
+## Slice
+
+Slice is a reference for contiguous sequence of elements. Since it is a reference, it can only be **borrowed** but not taken.
+
 
 
 ## References
