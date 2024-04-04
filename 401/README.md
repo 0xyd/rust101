@@ -88,7 +88,7 @@ fn add_1(mut x: i32){
 }
 ```
 
-Besides, the types of variables determine the ownership as well. As we have seen from the previous samples, some types like integers do `copy`. Types like string do `move` instead. The mechanism is the same when we pass a variable to a function. The following example shows that string *b* cannot be reused after its ownership is taken by function *takes_ownership*. In contrast, variable *a* can be reused in *main*.
+Besides, the types of variables determine the ownership as well. As we have seen from the previous samples, some types like integers do `copy`. Types like string do `move` instead. The mechanism is the same when we pass a variable to a function. The following example shows that string *b* **cannot** be reused after its ownership is taken by function *takes_ownership*. In contrast, variable *a* can be reused in *main*.
 
 ```rust
 fn main() {
@@ -184,7 +184,7 @@ Rust has restriction on borrowing a mutable reference for multiple times. When w
 }
 ```
 
-Similarily, once a mutable variable borrowed by an immutable reference. Any mutable borrowing afterward is not allowed.
+Similarily, once a mutable variable borrowed by an immutable reference. Any mutable borrowing afterward is not allowed. But immutable borrow is not limited.
 
 ```rust
 {
@@ -229,6 +229,7 @@ The restrictions only applies when the references are in the same scope. So we c
         println!("r5: {:?}", r5);
     }
     println!("After r5 called in scope, s2 :{:?}", s2);
+}
 ```
 
 
